@@ -95,7 +95,7 @@ router.get('/:id', (req, res) => {
 //作答區
 router.post('/', (req, res) => {
     const body = validateBody(req.body);
-    if(!validateBody.valid){
+    if(!body.valid){
         return res.status(400).json({ error: '缺 name 或 level' });
     }
     const newMember={ id:nextId , ...req.body};
